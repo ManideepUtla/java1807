@@ -7,6 +7,7 @@ import java.util.UUID;
 public class LoanService {
 
     public void getApplication(ApplicationDetails applicationDetails){
+        ApplicationDetails applicationDetails1=new ApplicationDetails();
         String applicationNumber = UUID.randomUUID().toString();
       if(applicationDetails.incomeDetails.incomeAmount>applicationDetails.incomeDetails.monthlyExcpensess){
           System.out.println("Eligible For Loan ");
@@ -17,6 +18,8 @@ public class LoanService {
     }
 
     public double isEligibleToLoan(IncomeDetails incomeDetails){
+
+        IncomeDetails incomeDetails1=new IncomeDetails();
        double savings = incomeDetails.incomeAmount- incomeDetails.monthlyExcpensess;
        double loanAmount=savings*10;
         System.out.println("You Are Eligible For This Loan Amount Only = "+loanAmount);
@@ -25,6 +28,7 @@ public class LoanService {
 
 
     public double getLoan(LoanDetails loanDetails){
+        LoanDetails loanDetails1=new LoanDetails();
         double savings = loanDetails.applicationDetails.incomeDetails.incomeAmount- loanDetails.applicationDetails.incomeDetails.monthlyExcpensess;
         double loanAmount=savings*10;
         double emiSaving=0.6*savings;
