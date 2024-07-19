@@ -185,7 +185,9 @@ class LoanServiceTest {
             LoanService service = new LoanService();
 
             service.getApplication(applicationDetails);
-           // service.getLoan(loanDetails);
+            service.isEligibleToLoan(incomeDetails);
+        // service.getLoan(loanDetails);
+
             double savings = service.isEligibleToLoan(incomeDetails);
             //double loanamount = service.isEligibleToLoan(incomeDetails);
             //double finalLoanAmount = service.getLoan(loanDetails);
