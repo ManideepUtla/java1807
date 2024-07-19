@@ -9,4 +9,6 @@ public class LoanDetails {
     public double interestRate;
     public int creditScore;
     public String purposeOfLoan;
+    public double emiAmount;
+    public double emiSavings;
 }

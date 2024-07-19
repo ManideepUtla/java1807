@@ -8,413 +8,320 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LoanServiceTest {
     @Test
-    public void test(){
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
+    public void getapplication_isforeligible() {
+        Address address = new Address();
+        address.flatNo = "g1";
+        address.street = "mana street";
+        address.area = "sardar patel nagar";
+        address.pinCode = "5000031";
+        address.city = "hyd";
 
 
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monthly Amount
-        incomeDetails.monthlyExcpensess=20000;
-        incomeDetails.incomeSource="by company";
+        IncomeDetails incomeDetails = new IncomeDetails();
+        incomeDetails.incomeAmount = 50000;// Monthly Amount
+        incomeDetails.monthlyExcpensess = 20000;
+        incomeDetails.incomeSource = "by company";
 
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
-
-
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
+        EmployementDetails employementDetails = new EmployementDetails();
+        employementDetails.nameOfTheCompany = "xxxxxxxx";
+        employementDetails.companyEmail = "xxxxxxxxxxxx@gmail.com";
+        employementDetails.companyAddress = address;
 
 
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
+        PersonalDetails personalDetails = new PersonalDetails();
+        personalDetails.firstName = "Manideep";
+        personalDetails.lastName = "Utla";
+        personalDetails.age = 22;
+        personalDetails.mobileNo = "9985533134";
+        personalDetails.eamil = "manideep@gmail.com";
+        personalDetails.address = address;
+        personalDetails.identification = "pan";
+        personalDetails.profession = "software";
 
 
-        LoanService service=new LoanService();
-
-        service.getApplication(applicationDetails);
-        service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
-        double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
+        ApplicationDetails applicationDetails = new ApplicationDetails();
+        applicationDetails.incomeDetails = incomeDetails;
+        applicationDetails.employementDetails = employementDetails;
+        applicationDetails.personalDetails = personalDetails;
+        applicationDetails.address = address;
 
 
+        LoanDetails loanDetails = new LoanDetails();
+        loanDetails.loanTerm = 24;
+        loanDetails.purposeOfLoan = "business";
+        loanDetails.creditScore = 800;
+        loanDetails.interestRate = 0.2;
+        loanDetails.applicationDetails = applicationDetails;
 
 
-
-
-/*
-
-        Assertions.assertNotEquals(incomeDetails.incomeAmount,incomeDetails.monthlyExcpensess);
-        Assertions.assertEquals(20000,incomeDetails.monthlyExcpensess);
-        Assertions.assertEquals(50000,incomeDetails.incomeAmount);
-
-
-        Assertions.assertNotNull(loanamount);
-
-        Assertions.assertNotEquals(emisavings,emiAmount);
-        Assertions.assertEquals(300000,emisavings);
-        Assertions.assertEquals(300000,emiAmount);
-*/
-
-    }
-    @Test
-    public void getapplication_isforeligible(){
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
-
-
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monthly Amount
-        incomeDetails.monthlyExcpensess=20000;
-        incomeDetails.incomeSource="by company";
-
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
-
-
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
-
-
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
-
-
-        LoanService service=new LoanService();
+        LoanService service = new LoanService();
 
         service.getApplication(applicationDetails);
         service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
+        double savings = service.isEligibleToLoan(incomeDetails);
         double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
+        double finalLoanAmount = service.getLoan(loanDetails);
+        double emisavings = service.getLoan(loanDetails);
+        double emiAmount = service.getLoan(loanDetails);
 
 
-
-
-        Assertions.assertTrue(applicationDetails.incomeDetails.incomeAmount>applicationDetails.incomeDetails.monthlyExcpensess);
+        Assertions.assertTrue(applicationDetails.incomeDetails.incomeAmount > applicationDetails.incomeDetails.monthlyExcpensess);
         Assertions.assertNotNull(applicationDetails);
 
     }
 
-   /* @Test
-    public void getapplication_isnotforeligible(){
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
+    @Test
+    public void getapplication_isnotforeligible() {
+        Address address = new Address();
+        address.flatNo = "g1";
+        address.street = "mana street";
+        address.area = "sardar patel nagar";
+        address.pinCode = "5000031";
+        address.city = "hyd";
 
 
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monhly Amount
-        incomeDetails.monthlyExcpensess=200000;
-        incomeDetails.incomeSource="by company";
+        IncomeDetails incomeDetails = new IncomeDetails();
+        incomeDetails.incomeAmount = 20000;// Monthly Amount
+        incomeDetails.monthlyExcpensess = 50000;
+        incomeDetails.incomeSource = "by company";
 
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
-
-
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
+        EmployementDetails employementDetails = new EmployementDetails();
+        employementDetails.nameOfTheCompany = "xxxxxxxx";
+        employementDetails.companyEmail = "xxxxxxxxxxxx@gmail.com";
+        employementDetails.companyAddress = address;
 
 
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
+        PersonalDetails personalDetails = new PersonalDetails();
+        personalDetails.firstName = "Manideep";
+        personalDetails.lastName = "Utla";
+        personalDetails.age = 22;
+        personalDetails.mobileNo = "9985533134";
+        personalDetails.eamil = "manideep@gmail.com";
+        personalDetails.address = address;
+        personalDetails.identification = "pan";
+        personalDetails.profession = "software";
 
 
-        LoanService service=new LoanService();
+        ApplicationDetails applicationDetails = new ApplicationDetails();
+        applicationDetails.incomeDetails = incomeDetails;
+        applicationDetails.employementDetails = employementDetails;
+        applicationDetails.personalDetails = personalDetails;
+        applicationDetails.address = address;
+
+
+        LoanDetails loanDetails = new LoanDetails();
+        loanDetails.loanTerm = 24;
+        loanDetails.purposeOfLoan = "business";
+        loanDetails.creditScore = 800;
+        loanDetails.interestRate = 0.2;
+        loanDetails.applicationDetails = applicationDetails;
+
+
+        LoanService service = new LoanService();
 
         service.getApplication(applicationDetails);
         service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
+        double savings = service.isEligibleToLoan(incomeDetails);
         double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
+        double finalLoanAmount = service.getLoan(loanDetails);
+        double emisavings = service.getLoan(loanDetails);
+        double emiAmount = service.getLoan(loanDetails);
 
 
-        Assertions.assertFalse(applicationDetails.incomeDetails.incomeAmount>applicationDetails.incomeDetails.monthlyExcpensess);
+        Assertions.assertFalse(applicationDetails.incomeDetails.incomeAmount > applicationDetails.incomeDetails.monthlyExcpensess);
         Assertions.assertNotNull(applicationDetails);
+
     }
-*/
+
 
     @Test
-    public void iseligibleforloan(){
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
+    public void iseligibleforloan() {
+        Address address = new Address();
+        address.flatNo = "g1";
+        address.street = "mana street";
+        address.area = "sardar patel nagar";
+            address.pinCode = "5000031";
+            address.city = "hyd";
 
 
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monthly Amount
-        incomeDetails.monthlyExcpensess=20000;
-        incomeDetails.incomeSource="by company";
+            IncomeDetails incomeDetails = new IncomeDetails();
+            incomeDetails.incomeAmount = 50000;// Monthly Amount
+            incomeDetails.monthlyExcpensess = 20000;
+            incomeDetails.incomeSource = "by company";
 
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
-
-
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
+            EmployementDetails employementDetails = new EmployementDetails();
+            employementDetails.nameOfTheCompany = "xxxxxxxx";
+            employementDetails.companyEmail = "xxxxxxxxxxxx@gmail.com";
+            employementDetails.companyAddress = address;
 
 
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
+            PersonalDetails personalDetails = new PersonalDetails();
+            personalDetails.firstName = "Manideep";
+            personalDetails.lastName = "Utla";
+            personalDetails.age = 22;
+            personalDetails.mobileNo = "9985533134";
+            personalDetails.eamil = "manideep@gmail.com";
+            personalDetails.address = address;
+            personalDetails.identification = "pan";
+            personalDetails.profession = "software";
 
 
-        LoanService service=new LoanService();
+            ApplicationDetails applicationDetails = new ApplicationDetails();
+            applicationDetails.incomeDetails = incomeDetails;
+            applicationDetails.employementDetails = employementDetails;
+            applicationDetails.personalDetails = personalDetails;
+            applicationDetails.address = address;
 
-        service.getApplication(applicationDetails);
-        service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
-        double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
 
+            LoanDetails loanDetails = new LoanDetails();
+            loanDetails.loanTerm = 24;
+            loanDetails.purposeOfLoan = "business";
+            loanDetails.creditScore = 800;
+            loanDetails.interestRate = 0.2;
+            loanDetails.applicationDetails = applicationDetails;
+
+
+            LoanService service = new LoanService();
+
+            service.getApplication(applicationDetails);
+            service.getLoan(loanDetails);
+            double savings = service.isEligibleToLoan(incomeDetails);
+            double loanamount = service.isEligibleToLoan(incomeDetails);
+            double finalLoanAmount = service.getLoan(loanDetails);
+            double emisavings = service.getLoan(loanDetails);
+            double emiAmount = service.getLoan(loanDetails);
 
         Assertions.assertEquals(savings,incomeDetails.incomeAmount-incomeDetails.monthlyExcpensess);
         Assertions.assertNotNull(incomeDetails);
-
     }
+
 
     @Test
-    public void getloan_approved(){
-
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
-
-
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monthly Amount
-        incomeDetails.monthlyExcpensess=20000;
-        incomeDetails.incomeSource="by company";
-
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
+    public void getloan_approved() {
+        Address address = new Address();
+        address.flatNo = "g1";
+        address.street = "mana street";
+        address.area = "sardar patel nagar";
+        address.pinCode = "5000031";
+        address.city = "hyd";
 
 
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
+        IncomeDetails incomeDetails = new IncomeDetails();
+        incomeDetails.incomeAmount = 50000;// Monthly Amount
+        incomeDetails.monthlyExcpensess = 20000;
+        incomeDetails.incomeSource = "by company";
+
+        EmployementDetails employementDetails = new EmployementDetails();
+        employementDetails.nameOfTheCompany = "xxxxxxxx";
+        employementDetails.companyEmail = "xxxxxxxxxxxx@gmail.com";
+        employementDetails.companyAddress = address;
 
 
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
+        PersonalDetails personalDetails = new PersonalDetails();
+        personalDetails.firstName = "Manideep";
+        personalDetails.lastName = "Utla";
+        personalDetails.age = 22;
+        personalDetails.mobileNo = "9985533134";
+        personalDetails.eamil = "manideep@gmail.com";
+        personalDetails.address = address;
+        personalDetails.identification = "pan";
+        personalDetails.profession = "software";
 
 
-        LoanService service=new LoanService();
+        ApplicationDetails applicationDetails = new ApplicationDetails();
+        applicationDetails.incomeDetails = incomeDetails;
+        applicationDetails.employementDetails = employementDetails;
+        applicationDetails.personalDetails = personalDetails;
+        applicationDetails.address = address;
+
+
+        LoanDetails loanDetails = new LoanDetails();
+        loanDetails.loanTerm = 24;
+        loanDetails.purposeOfLoan = "business";
+        loanDetails.creditScore = 800;
+        loanDetails.interestRate = 0.2;
+        loanDetails.applicationDetails = applicationDetails;
+
+
+        LoanService service = new LoanService();
 
         service.getApplication(applicationDetails);
         service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
+
+
+        double savings = service.isEligibleToLoan(incomeDetails);
         double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
+        double finalLoanAmount = service.getLoan(loanDetails);
+        double emisavings = service.getLoan(loanDetails);
+       // double emiAmount = service.getLoan(loanDetails);
 
 
-
-        Assertions.assertTrue(emisavings>emiAmount);
-        Assertions.assertNotNull(loanDetails);
-
-
-    }
-
-   /* @Test
-    public void getloan_notapproved(){
-
-
-
-        Address address=new Address();
-        address.flatNo="g1";
-        address.street="mana street";
-        address.area="sardar patel nagar";
-        address.pinCode="5000031";
-        address.city="hyd";
-
-
-        IncomeDetails incomeDetails=new IncomeDetails();
-        incomeDetails.incomeAmount=50000;// Monthly Amount
-        incomeDetails.monthlyExcpensess=20000;
-        incomeDetails.incomeSource="by company";
-
-        EmployementDetails employementDetails=new EmployementDetails();
-        employementDetails.nameOfTheCompany="xxxxxxxx";
-        employementDetails.companyEmail="xxxxxxxxxxxx@gmail.com";
-        employementDetails.companyAddress=address;
-
-
-        PersonalDetails personalDetails=new PersonalDetails();
-        personalDetails.firstName="Manideep";
-        personalDetails.lastName="Utla";
-        personalDetails.age=22;
-        personalDetails.mobileNo="9985533134";
-        personalDetails.eamil="manideep@gmail.com";
-        personalDetails.address=address;
-        personalDetails.identification="pan";
-        personalDetails.profession="software";
-
-
-
-        ApplicationDetails applicationDetails=new ApplicationDetails();
-        applicationDetails.incomeDetails=incomeDetails;
-        applicationDetails.employementDetails=employementDetails;
-        applicationDetails.personalDetails=personalDetails;
-        applicationDetails.address=address;
-
-
-        LoanDetails loanDetails=new LoanDetails();
-        loanDetails.loanTerm=24;
-        loanDetails.purposeOfLoan="business";
-        loanDetails.creditScore=800;
-        loanDetails.interestRate=0.2;
-        loanDetails.applicationDetails=applicationDetails;
-
-
-        LoanService service=new LoanService();
-
-        service.getApplication(applicationDetails);
-        service.getLoan(loanDetails);
-        double savings=service.isEligibleToLoan(incomeDetails);
-        double loanamount = service.isEligibleToLoan(incomeDetails);
-        double finalLoanAmount=service.getLoan(loanDetails);
-        double emisavings=service.getLoan(loanDetails);
-        double emiAmount=service.getLoan(loanDetails);
-
-
-
-        Assertions.assertFalse(emisavings>emiAmount);
+        //Assertions.assertTrue(emisavings>emiAmount);
+        Assertions.assertTrue(emisavings>loanDetails.emiAmount);
         Assertions.assertNotNull(loanDetails);
 
     }
-*/
+
+        @Test
+        public void getloan_notapproved() {
+            Address address = new Address();
+            address.flatNo = "g1";
+            address.street = "mana street";
+            address.area = "sardar patel nagar";
+            address.pinCode = "5000031";
+            address.city = "hyd";
 
 
+            IncomeDetails incomeDetails = new IncomeDetails();
+            incomeDetails.incomeAmount = 50000;// Monthly Amount
+            incomeDetails.monthlyExcpensess = 20000;
+            incomeDetails.incomeSource = "by company";
 
-}
+            EmployementDetails employementDetails = new EmployementDetails();
+            employementDetails.nameOfTheCompany = "xxxxxxxx";
+            employementDetails.companyEmail = "xxxxxxxxxxxx@gmail.com";
+            employementDetails.companyAddress = address;
+
+
+            PersonalDetails personalDetails = new PersonalDetails();
+            personalDetails.firstName = "Manideep";
+            personalDetails.lastName = "Utla";
+            personalDetails.age = 22;
+            personalDetails.mobileNo = "9985533134";
+            personalDetails.eamil = "manideep@gmail.com";
+            personalDetails.address = address;
+            personalDetails.identification = "pan";
+            personalDetails.profession = "software";
+
+
+            ApplicationDetails applicationDetails = new ApplicationDetails();
+            applicationDetails.incomeDetails = incomeDetails;
+            applicationDetails.employementDetails = employementDetails;
+            applicationDetails.personalDetails = personalDetails;
+            applicationDetails.address = address;
+
+
+            LoanDetails loanDetails = new LoanDetails();
+            loanDetails.loanTerm = 24;
+            loanDetails.purposeOfLoan = "business";
+            loanDetails.creditScore = 800;
+            loanDetails.interestRate = 0.2;
+            loanDetails.applicationDetails = applicationDetails;
+
+
+            LoanService service = new LoanService();
+
+            service.getApplication(applicationDetails);
+            service.getLoan(loanDetails);
+            double savings = service.isEligibleToLoan(incomeDetails);
+            double loanamount = service.isEligibleToLoan(incomeDetails);
+            double finalLoanAmount = service.getLoan(loanDetails);
+            double emisavings = service.getLoan(loanDetails);
+            double emiAmount = service.getLoan(loanDetails);
+
+
+            Assertions.assertFalse(emisavings>emiAmount);
+            Assertions.assertNotNull(loanDetails);
+
+        }
+    }

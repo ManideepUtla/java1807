@@ -20,29 +20,29 @@ public class LoanService {
        double savings = incomeDetails.incomeAmount- incomeDetails.monthlyExcpensess;
        double loanAmount=savings*10;
         System.out.println("You Are Eligible For This Loan Amount Only = "+loanAmount);
-        return  loanAmount;
+        return  savings;
     }
 
 
     public double getLoan(LoanDetails loanDetails){
         double savings = loanDetails.applicationDetails.incomeDetails.incomeAmount- loanDetails.applicationDetails.incomeDetails.monthlyExcpensess;
         double loanAmount=savings*10;
-        double finalLoanAmount=loanAmount+loanDetails.interestRate;
+        //double finalLoanAmount=loanAmount+loanDetails.interestRate;
         double emiSaving=0.6*savings;
-        double emiAmount= finalLoanAmount/loanDetails.loanTerm;
+         loanDetails.emiAmount= loanAmount/loanDetails.loanTerm;
         String loanNumber = UUID.randomUUID().toString();
 
-        if(emiSaving>=emiAmount){
+        if(emiSaving>=loanDetails.emiAmount){
             System.out.println("Your Loan Approved");
             System.out.println("Loan Number = "+loanNumber);
-            System.out.println("For Monthly Emi = "+emiAmount);
+            System.out.println("For Monthly Emi = "+loanDetails.emiAmount);
 
         }else {
             System.out.println("Not Approved");
         }
-        return loanAmount;
+        return emiSaving;
     }
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         IncomeDetails incomeDetails = new IncomeDetails();
         incomeDetails.incomeAmount=50000;
         incomeDetails.monthlyExcpensess=20000;
@@ -66,7 +66,7 @@ public class LoanService {
         System.out.println(loanService);
 
 
-    }
+    }*/
 
 
 }
