@@ -27,7 +27,6 @@ public class LoanService {
     public double getLoan(LoanDetails loanDetails){
         double savings = loanDetails.applicationDetails.incomeDetails.incomeAmount- loanDetails.applicationDetails.incomeDetails.monthlyExcpensess;
         double loanAmount=savings*10;
-        //double finalLoanAmount=loanAmount+loanDetails.interestRate;
         double emiSaving=0.6*savings;
          loanDetails.emiAmount= loanAmount/loanDetails.loanTerm;
         String loanNumber = UUID.randomUUID().toString();
